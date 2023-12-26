@@ -9,6 +9,7 @@ let storyList = [];
 let chathams_blue = "#1A4B84";
 
 // Elements
+
 const description = document.getElementById("description");
 const assignedto = document.getElementById("assignedto");
 const priority = document.getElementById("priority");
@@ -120,6 +121,11 @@ initApp();
 // form validation
 const formValidate = (e) => {
   e.preventDefault();
+  if (tasktitle.value ===""){
+    alert("please enter task title");
+    tasktitle.focus();
+    return;
+  }
   if (description.value === "") {
     alert("Please enter description");
     description.focus();
@@ -147,6 +153,7 @@ const formValidate = (e) => {
     priority: priority.value,
     storyStatus: "open",
   };
+   tasktitle.value="";
   description.value = "";
   assignedto.value = "";
   priority.value = "";
