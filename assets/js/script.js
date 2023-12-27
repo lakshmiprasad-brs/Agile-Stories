@@ -16,6 +16,7 @@ const priority = document.getElementById("priority");
 const storySubmitBtn = document.getElementById("storySubmitBtn");
 const storyCardList = document.getElementById("storyCardList");
 const descrptionLength = document.getElementById("descLength");
+let tasktitle = document.getElementById("tasktitle");
 const maxLength = 100;
 const warnLength = 90;
 
@@ -78,6 +79,7 @@ const updateList = (newStory, updatedList) => {
             ${issue.storyStatus === "open" ? "open" : "closed"}</span>
             </div>
             <div class="card-body">
+            <h4>Title : ${issue.tasktitle}</h4>
             <p class="text-start pb-1">Assigned to : ${
               assignedToList[issue.assignedTo]
             }</p>
@@ -151,6 +153,7 @@ const formValidate = (e) => {
     description: description.value,
     assignedTo: assignedto.value,
     priority: priority.value,
+    tasktitle: tasktitle.value,
     storyStatus: "open",
   };
    tasktitle.value="";
